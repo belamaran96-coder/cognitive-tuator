@@ -1,0 +1,320 @@
+📘 Project Document
+
+Cognitive Tutor: One-Document → Mastery
+
+
+---
+
+1. Project Overview
+
+Project Name
+
+Cognitive Tutor: One-Document → Mastery
+
+Theme
+
+Theme 2: Reasoning and Personalized Experience (Maximized Context)
+
+Problem Statement
+
+Most AI learning tools rely on:
+
+Shallow summarization
+
+Repeated document reprocessing
+
+Multi-turn conversations that waste tokens
+
+
+As a result, they fail to measure true understanding, personalize learning, and scale efficiently.
+
+Our Solution
+
+Cognitive Tutor transforms any large document into a personalized learning experience using:
+
+A single deep reasoning pass over the document
+
+Complex, rubric-backed questions
+
+Single-turn evaluation with personalized feedback
+
+
+This enables deep comprehension, not just surface-level Q&A.
+
+
+---
+
+2. Key Innovation
+
+What Makes This Project Unique
+
+✔ Reasoning-first, not chatbot-based
+✔ Document analyzed once only
+✔ Hidden evaluation rubrics for accuracy
+✔ Personalized feedback without repeated context
+✔ Optimized Gemini API usage
+
+> “We teach understanding, not answers.”
+
+
+
+
+---
+
+3. System Architecture
+
+High-Level Architecture
+
+User
+ └── Web UI (React + Tailwind)
+      └── Backend API (Node.js + Express)
+           ├── Gemini Call #1: Document Intelligence
+           │    ├── Concept Extraction
+           │    ├── Assumptions
+           │    └── Questions + Rubrics
+           │
+           ├── Gemini Call #2+: Single-Turn Evaluations
+           │
+           └── Local JSON Memory Store
+
+
+---
+
+4. Functional Workflow
+
+Step 1: Document Upload
+
+User uploads a PDF or large text file
+
+Text is extracted using a PDF parser
+
+Entire document sent once to Gemini
+
+
+
+---
+
+Step 2: Deep Document Intelligence (Single Call)
+
+Gemini performs:
+
+Core theme extraction
+
+Implicit assumption detection
+
+Cross-section reasoning
+
+Difficulty mapping
+
+
+Output stored locally for reuse.
+
+
+---
+
+Step 3: Question Generation
+
+Gemini generates:
+
+Exactly 5 complex questions
+
+Each question tests:
+
+Synthesis
+
+Evaluation
+
+Application
+
+
+Each question includes a hidden rubric
+
+
+
+---
+
+Step 4: Learner Interaction
+
+User selects a question
+
+Submits a free-text answer
+
+
+
+---
+
+Step 5: Single-Turn Evaluation
+
+One Gemini call evaluates:
+
+Conceptual accuracy
+
+Depth of reasoning
+
+Missed ideas
+
+Personalized improvement suggestion
+
+
+⚠ No follow-up questions
+⚠ No document re-analysis
+
+
+---
+
+5. Data Models
+
+Document Intelligence Object
+
+{
+  "core_themes": [],
+  "implicit_assumptions": [],
+  "cross_section_links": [],
+  "difficulty_map": {}
+}
+
+
+---
+
+Question Object
+
+{
+  "id": "Q1",
+  "question_text": "",
+  "targets": ["analysis", "synthesis"],
+  "rubric": {
+    "key_points": [],
+    "depth_markers": [],
+    "common_misconceptions": []
+  }
+}
+
+
+---
+
+Learner Memory Object
+
+{
+  "strengths": [],
+  "gaps": [],
+  "feedback_preference": "concise | detailed"
+}
+
+
+---
+
+6. Gemini Prompt Design
+
+Prompt 1: Document Intelligence (Heavy Reasoning)
+
+Purpose:
+Analyze the document once and extract reusable intelligence.
+
+Output:
+
+Structured JSON
+
+5 questions
+
+Rubrics
+
+
+
+---
+
+Prompt 2: Answer Evaluation (Single Turn)
+
+Purpose:
+Evaluate learner response against rubric.
+
+Output:
+
+{
+  "score_band": "High | Medium | Developing",
+  "feedback": "",
+  "missed_concept": "",
+  "next_learning_suggestion": ""
+}
+
+
+---
+
+7. Personalization Strategy
+
+Personalization is achieved through:
+
+Rubric-based reasoning
+
+Learner memory tracking
+
+Adaptive feedback tone
+
+
+❌ No repeated document context
+❌ No additional Gemini calls
+
+
+---
+
+8. Tech Stack
+
+Layer Technology
+
+Frontend React + Tailwind CSS
+Backend Node.js + Express
+AI Gemini (Google AI Studio)
+Storage In-memory JSON
+PDF Parsing pdf-parse
+
+
+
+---
+Use Cases
+
+🎓 Education (deep learning, exam prep)
+
+⚖ Legal document comprehension
+
+🧠 Research paper mastery
+
+🏢 Enterprise training
+
+📚 Policy & compliance learning
+
+
+
+---
+
+11. Why This Project Wins
+
+Criteria How We Excel
+
+Reasoning Rubric-based evaluation
+Context Management Single document analysis
+Efficiency Minimal Gemini calls
+Innovation Learning intelligence system
+Demo Quality Clear, fast, impactful
+
+
+
+---
+
+12. Future Enhancements
+
+Cross-document reasoning
+
+Instructor dashboards
+
+Mastery progression visualization
+
+Multi-learner analytics
+
+
+
+---
+
+13. Conclusion
+
+Cognitive Tutor redefines how AI helps people learn from complex documents.
+
+By combining deep reasoning, efficient context usage, and personalized feedback, it delivers a next-generation learning experience aligned perfectly with the hackathon’s theme.
