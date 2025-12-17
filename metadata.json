@@ -1,0 +1,5 @@
+{
+  "name": "Cognitive Tutor",
+  "description": "A reasoning-first learning platform that analyzes documents once to generate deep questions, hidden rubrics, and personalized feedback loops using Gemini 3.0 Pro.",
+  "requestFramePermissions": []
+}
